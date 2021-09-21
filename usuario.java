@@ -1,5 +1,4 @@
 /***************************************************************************
-Proyecto Final. Entrega 2 POO
 Usuario.java
 
 Autores: 

@@ -1,6 +1,5 @@
 /***************************************************************************
-Proyecto Final. Entrega 2 POO
-Arrays.java
+Listas.java
 
 Autores: 
 Erick Bolaños - 20227
