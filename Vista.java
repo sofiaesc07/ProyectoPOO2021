@@ -16,22 +16,22 @@ import java.util.*;
 
 class Vista{
 	private Scanner scan;
-	private Listas a;
+	private Listas l;
 	
 	Vista(){
 		
 		scan = new Scanner(System.in);
-		a = new Listas();
+		l = new Listas();
 	}
-
+	//Menu inicial en donde se registrara un usuario para poder utilizar el programa.
 	public int menu(){
 		System.out.println("-----------------------------------");
-		System.out.println("       BIENVENIDOS A ECO2    ");
+		System.out.println("       BIENVENID@S A ECO2    ");
 		System.out.println("-----------------------------------");
-		System.out.println("\n1- Iniciar sesion");
+		System.out.println("1- Iniciar sesion");
 		System.out.println("2- Registrar un usuario");
 		System.out.println("3- Mostrar Usuarios");
-		System.out.println("4- Salir");
+		System.out.println("4- Salir" + "\n");
 		System.out.print("Ingrese una opción: ");
 		int opcion = scan.nextInt();
 
@@ -39,54 +39,55 @@ class Vista{
 		
 	}
 	
-	//Imprimir el sub menú
+	//Menú 2 o submenu del programa para realizar las ecuestas
 	public int subMenu(){
+		System.out.println("¿Que deseas hacer?");
 		System.out.println("\n1- Realizar encuesta de electricidad");// pendiente
 		System.out.println("2- Realizar encuesta de agua");// pendiente
 		System.out.println("3- Realizar encuesta de desechos");// pendiente
 		System.out.println("4- Realizar encuesta de transporte");// pendiente
 		System.out.println("5- Revisar estadisticas y consejos");// pendiente
-		System.out.println("6- Salir");
+		System.out.println("6- Salir" + "\n");
 		
 		System.out.print("Ingrese una opción: ");
 		int opcion = scan.nextInt();
 		return opcion;
 	}
 	
-//Usuarios
+//Usuarios y contraseñas del programa 
+
 	//iniciar sesión con usuarios registrados en la base de datos
 	public boolean login(){
 		boolean logeado = false;
 		
-		ArrayList<usuario> uu = a.leerUsuarios();
+		ArrayList<usuario> uu = l.leerUsuarios();
 		usuario usuarioTemp = null;
 
 		if(uu != null){
-			System.out.print("Ingrese su nombre de usuario: ");
+			System.out.print("\nIngrese su nombre de usuario: ");
 			String nombre = scan.next();
 		
-			//Comprobaciones de usuario y contraseña al momento de hacer el login
+			//Esto es para comprobar que los usuarios y las contraseñas existen y estan guardados.
 			boolean comprobadorUsuario = false;
 			boolean comprobadorContrasena = false;
 			
+			//Aqui comprobamos que el usuario que estamos ingresando si exista
 			for(int i = 0 ; i<uu.size() ; i++){
-				//variable temporal de tipo usuario
 				usuario usuarioLista = uu.get(i);
 						
 				if(nombre.equals(usuarioLista.getNombre())){
 					usuarioTemp = uu.get(i);
 				}				
 			}
-			
 			try{ 
 				if(nombre.equals(usuarioTemp.getNombre())){
 					comprobadorUsuario = true;					
 				}
 			}catch(Exception e){				
 			}
-			
+			//Aqui comprobaremos si la contraseña que estamos ingresando pertenece al usuario
 			if(comprobadorUsuario == true){
-				System.out.print("Ingrese su contrasena: ");
+				System.out.print("Ingrese una contrasena: ");
 				String contra = scan.next();
 			
 				try {	
@@ -97,22 +98,22 @@ class Vista{
 				}
 								
 				if(comprobadorContrasena == true){
-					System.out.println("\nBIENVENIDO " + usuarioTemp.getNombre() + "\n");
+					System.out.println("\n--- BIENVENID@ " + usuarioTemp.getNombre() + "--- \n");
 					logeado = true;
 				}else{
-					System.out.println("----------------------");
-					System.out.println("CONTRASENA INCORRECTA");
-					System.out.println("----------------------");						
+					System.out.println(" ");
+					System.out.println("CONTRASENA INCORRECTA, INTENTE DE NUEVO");
+					System.out.println(" ");						
 				}
 			}else{
-				System.out.println("----------------------");
-				System.out.println("USURARIO NO ENCONTRADO");
-				System.out.println("----------------------");	
+				System.out.println(" ");
+				System.out.println("USURARIO NO ENCONTRADO, INTENTE DE NUEVO O REGISTRE UNO");
+				System.out.println(" ");	
 			}				
 		}else{
-			System.out.println("-------------------------------------");
+			System.out.println(" ");
 			System.out.println("NO HAY USUARIOS CREADOS, REGISTRE UNO O INTENTE DE NUEVO");
-			System.out.println("-------------------------------------");
+			System.out.println(" S");
 		}		
 		return logeado;		
 	}
@@ -122,7 +123,7 @@ class Vista{
 	public void crear(){
 		
 		//ArrayList para almacenar objetos de tipo usuario extraídos de la base de datos 
-		ArrayList<usuario> usuariosRep = a.leerUsuarios();
+		ArrayList<usuario> usuariosRep = l.leerUsuarios();
 		usuario usuarioTemp;
 		
 		System.out.print("Ingrese su nombre de usuario: ");
@@ -144,61 +145,60 @@ class Vista{
 				}
 			}
 			
-			//condicionales si el usuario existe o no
+			//condicionales para demostrar si el usuario ya existe o no
 			if(contador != 0){
-				System.out.println("----------------------");
+				System.out.println(" ");
 				System.out.println("EL USUARIO YA EXISTE");
-				System.out.println("----------------------");
+				System.out.println(" ");
 			}else{
 				System.out.print("Ingrese su contrasena: ");
 				String contra = scan.next();
 				usuario u = new usuario(nombre, contra);
 				usuariosRep.add(u);
-				a.nuevoU(usuariosRep);
-				System.out.println("-----------------------------------");
+				l.usNuev(usuariosRep);
+				System.out.println(" ");
 				System.out.println("USUARIO REGISTRADO EXITOSAMENTE");
-				System.out.println("-----------------------------------");
+				System.out.println(" ");
 			}
-			
 		}else{
 			System.out.print("Ingrese su contrasena: ");
 			String contra = scan.next();
 			usuariosRep = new ArrayList<usuario>();
 			usuario u = new usuario(nombre, contra);
 			usuariosRep.add(u);
-			a.nuevoU(usuariosRep);
-			System.out.println("-----------------------------------");
+			l.usNuev(usuariosRep);
+			System.out.println(" ");
 			System.out.println("USUARIO REGISTRADO EXITOSAMENTE");
-			System.out.println("-----------------------------------");
+			System.out.println(" ");
 		}		
 	}
 	
-	//Método para imprimir los usuarios existentes
+//Imprimir los usuarios con sus contraseñas por si una persona no se acuerda de estos.
 	public void mostrarUsuarios(){
-		//ArrayList que almacenará objetos de tipo usuario 
-		ArrayList<usuario> usuariosRep = a.leerUsuarios();
+		//ArrayList para guardar los usuarios
+		ArrayList<usuario> usuariosRep = l.leerUsuarios();
 		
 		if(usuariosRep == null){
-			System.out.println("------------------------------------------------");
+			System.out.println(" ");
 			System.out.println("BASE DE DATOS NO ENCONTRADA, REGISTRE UN USUARIO");
-			System.out.println("------------------------------------------------");
+			System.out.println(" ");
 		}else{
 			//Variable temporal de tipo usuario para utilizar sus getters 
 			usuario usuarioTemp;
-			System.out.println("-----------------------------------");
+			System.out.println(" ");
 			
-			//Ciclo para recorrer el ArrayList y poder realizar prints de cada usuario 
+			//Ciclo para poder imprimir los usuarios con sus respectivas contraseñas
 			for(int i = 0 ; i<usuariosRep.size() ; i++){
 				usuarioTemp = usuariosRep.get(i);
-				System.out.println("Nombre de usuario: " + usuarioTemp.getNombre());
-				System.out.println("Contrasena: " +usuarioTemp.getContrasena() + "\n");
 				System.out.println("-----------------------------------");
+				System.out.println("Usuario: " + usuarioTemp.getNombre());
+				System.out.println("Contrasena: " +usuarioTemp.getContrasena());
+				System.out.println("-----------------------------------" + "\n");
 			}
 		}
 	}
 	
 //Salir del perfil y del programa
-	
 	public boolean salirPerfil(){
 
 		boolean cerrar = true;
@@ -208,7 +208,6 @@ class Vista{
 		
 		return cerrar;
 	}
-	
 	public boolean salirPrograma(){
 		
 		boolean cerrar = true;

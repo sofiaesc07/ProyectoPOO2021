@@ -40,7 +40,7 @@ class Controlador{
 			}else if(num == 2){
 				v.crear();
 			}else if(num ==3){
-				v.mostrarUsuarios();
+				v.mostrarUsuarios(); 
 				
 			}else if(num == 4){
 				if(v.salirPrograma()){

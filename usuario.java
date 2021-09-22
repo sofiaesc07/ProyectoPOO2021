@@ -14,7 +14,6 @@ objetos creados en un documento.
 //Se importa la clase Serializable 
 import java.io.Serializable;
 
-//Clase Usuario
 class usuario implements Serializable {
 	//Atributos
 	private String nombre;
@@ -26,7 +25,7 @@ class usuario implements Serializable {
 		contrasena = c;
 	}
 	
-	//getters de la clase
+	//getters
 	public String getNombre(){
 		return nombre;
 	}
