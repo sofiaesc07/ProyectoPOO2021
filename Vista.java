@@ -41,7 +41,7 @@ class Vista{
 	
 	//Menú 2 o submenu del programa para realizar las ecuestas
 	public int subMenu(){
-		System.out.println("¿Que deseas hacer?");
+		System.out.println("\n¿Que deseas hacer?");
 		System.out.println("\n1- Realizar encuesta de electricidad");// pendiente
 		System.out.println("2- Realizar encuesta de agua");// pendiente
 		System.out.println("3- Realizar encuesta de desechos");// pendiente
@@ -119,7 +119,7 @@ class Vista{
 	}
 	
 		
-	//creamos cada uno de los usuarios y lo mandamos al método de nuevoU de archivos para guardarlo en el txt
+	//creamos cada uno de los usuarios y lo mandamos a listas para guardarlo en el txt
 	public void crear(){
 		
 		//ArrayList para almacenar objetos de tipo usuario extraídos de la base de datos 
@@ -216,5 +216,17 @@ class Vista{
 		System.out.println("VUELVA PRONTO");
 		
 		return cerrar;
+	}
+
+	public void cuestionarioEner() {
+		System.out.println("\n¿Cuantas personas viven en tu casa?");
+		Energia en = new Energia();
+		int personas = scan.nextInt();
+		System.out.println("\n¿A cuanto trasiende la factura de luz en su casa?");
+		int consumo = scan.nextInt();
+		System.out.println("\n¿Cuanto aparatos que necesitan ser conectados tiene en su casa?");
+		int aparatoselec = scan.nextInt();
+		System.out.println("\n¿Cuantas luces hay en su casa?");
+		int lucescasa = scan.nextInt();
 	}
 }

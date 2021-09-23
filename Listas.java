@@ -16,7 +16,6 @@ import java.util.*;
 class Listas{
 //Todo esto nos ayudara a que los usuarios se queden guardados incluso si se cierra el programa	
     public void usNuev(ArrayList<usuario> usu){ 
-		
 		try{ //Esto nos ayudara a guardar los datos dentro de uestro file Usuarios.txt  
            ObjectOutputStream GuardarDatos = new ObjectOutputStream(new FileOutputStream("Usuarios.txt"));
            GuardarDatos.writeObject(usu);

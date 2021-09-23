@@ -11,7 +11,7 @@ Con esta clase se implemento la clase Serializable para poder guardar los
 objetos creados en un documento.
 ****************************************************************************/
  
-//Se importa la clase Serializable 
+//La clase Serializable nos ayudara a que el usuario y la contraseña se queden guardados. 
 import java.io.Serializable;
 
 class usuario implements Serializable {
@@ -20,9 +20,9 @@ class usuario implements Serializable {
 	private String contrasena;
 	
 	//Constructor de la clase
-	usuario(String n, String c){
-		nombre = n;
-		contrasena = c;
+	usuario(String name, String contra){
+		nombre = name;
+		contrasena = contra;
 	}
 	
 	//getters

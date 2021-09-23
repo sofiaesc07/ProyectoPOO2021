@@ -28,10 +28,11 @@ class Controlador{
 					
 						subOpcion = v.subMenu();
 						if(subOpcion == 1){
-						}else if(subOpcion == 2){
-						}else if(subOpcion == 3){
-						}else if(subOpcion == 4){
-						}else if(subOpcion == 5){
+							v.cuestionarioEner();
+						}else if(subOpcion == 2){//pendiente
+						}else if(subOpcion == 3){//pendiente
+						}else if(subOpcion == 4){//pendiente
+						}else if(subOpcion == 5){//pendiente
 						}else if(v.salirPerfil()){
 							subOpcion = 6;
 						}
