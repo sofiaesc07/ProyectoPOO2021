@@ -4,7 +4,6 @@ Controlador.java
 Autores: 
 Erick Bolaños - 20227
 Ana Escobar - 20489
-José Gutiérrez - 201646
 Eric Noriega - 211146
 
 Con esta clase podremos mostrarle el menú al usuario que esté 
@@ -27,8 +26,7 @@ class Controlador{
 					while(subOpcion != 6){
 					
 						subOpcion = v.subMenu();
-						if(subOpcion == 1){
-							v.cuestionarioEner();
+						if(subOpcion == 1){//pendiente
 						}else if(subOpcion == 2){//pendiente
 						}else if(subOpcion == 3){//pendiente
 						}else if(subOpcion == 4){//pendiente

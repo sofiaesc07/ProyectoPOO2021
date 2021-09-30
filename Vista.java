@@ -4,7 +4,6 @@ Vista.java
 Autores: 
 Erick Bolaños - 20227
 Ana Escobar - 20489
-José Gutiérrez - 201646
 Eric Noriega - 211146
 
 Con esta clase podremos acceder a los métodos de la clase arrays para 
@@ -25,6 +24,8 @@ class Vista{
 	}
 	//Menu inicial en donde se registrara un usuario para poder utilizar el programa.
 	public int menu(){
+		
+		int opcion = 0;
 		System.out.println("-----------------------------------");
 		System.out.println("       BIENVENID@S A ECO2    ");
 		System.out.println("-----------------------------------");
@@ -33,14 +34,32 @@ class Vista{
 		System.out.println("3- Mostrar Usuarios");
 		System.out.println("4- Salir" + "\n");
 		System.out.print("Ingrese una opción: ");
-		int opcion = scan.nextInt();
-
-		return opcion;
-		
+  		
+		//Comprobamos que el numero ingresado por el usuario se encuentre dentro de 
+		//nuestro rango de opciones y que sea un int      
+		boolean continuar = false;
+		while (!continuar){
+            try{
+				opcion = scan.nextInt();
+                scan.nextLine();
+				if(opcion > 0 && opcion < 5){
+                    continuar = true;
+                }else{
+                    System.out.println("La opcion seleccionada no se encuentra en el menu de opciones.");
+                    System.out.println("Seleccione una opcion entre 1 y 4");
+                }
+            }catch(java.util.InputMismatchException excepcion){
+                System.out.println("Error. Opción ingresada fuera de rango.");
+                System.out.println("Coloque de nuevo la opción: ");
+                scan.nextLine();
+			}
+		}return opcion;
 	}
 	
 	//Menú 2 o submenu del programa para realizar las ecuestas
 	public int subMenu(){
+
+		int opcion = 0;
 		System.out.println("\n¿Que deseas hacer?");
 		System.out.println("\n1- Realizar encuesta de electricidad");// pendiente
 		System.out.println("2- Realizar encuesta de agua");// pendiente
@@ -48,10 +67,27 @@ class Vista{
 		System.out.println("4- Realizar encuesta de transporte");// pendiente
 		System.out.println("5- Revisar estadisticas y consejos");// pendiente
 		System.out.println("6- Salir" + "\n");
-		
-		System.out.print("Ingrese una opción: ");
-		int opcion = scan.nextInt();
-		return opcion;
+
+		//Comprobamos que el numero ingresado por el usuario se encuentre dentro de 
+		//nuestro rango de opciones y que sea un int
+		boolean continuar = false;
+		while (!continuar){
+            try{
+				opcion = scan.nextInt();
+                scan.nextLine();
+				if(opcion > 0 && opcion < 7){
+                    continuar = true;
+                }else{
+                    System.out.println("La opcion seleccionada no se encuentra en el menu de opciones.");
+                    System.out.println("Seleccione una opcion entre 1 y 6");
+                }
+            }catch(java.util.InputMismatchException excepcion){
+                System.out.println("Error. Opción ingresada fuera de rango.");
+                System.out.println("Coloque de nuevo la opción: ");
+                scan.nextLine();
+			}
+		}return opcion;
+
 	}
 	
 //Usuarios y contraseñas del programa 
@@ -216,17 +252,5 @@ class Vista{
 		System.out.println("VUELVA PRONTO");
 		
 		return cerrar;
-	}
-
-	public void cuestionarioEner() {
-		System.out.println("\n¿Cuantas personas viven en tu casa?");
-		Energia en = new Energia();
-		int personas = scan.nextInt();
-		System.out.println("\n¿A cuanto trasiende la factura de luz en su casa?");
-		int consumo = scan.nextInt();
-		System.out.println("\n¿Cuanto aparatos que necesitan ser conectados tiene en su casa?");
-		int aparatoselec = scan.nextInt();
-		System.out.println("\n¿Cuantas luces hay en su casa?");
-		int lucescasa = scan.nextInt();
 	}
 }

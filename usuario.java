@@ -4,14 +4,13 @@ Usuario.java
 Autores: 
 Erick Bolaños - 20227
 Ana Escobar - 20489
-José Gutiérrez - 201646
 Eric Noriega - 211146
 
 Con esta clase se implemento la clase Serializable para poder guardar los 
 objetos creados en un documento.
 ****************************************************************************/
  
-//La clase Serializable nos ayudara a que el usuario y la contraseña se queden guardados. 
+//La clase Serializable nos ayudara a que el usuario y la contraseña se queden guardados.
 import java.io.Serializable;
 
 class usuario implements Serializable {
