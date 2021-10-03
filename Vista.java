@@ -61,7 +61,7 @@ class Vista{
 
 		int opcion = 0;
 		System.out.println("\n¿Que deseas hacer?");
-		System.out.println("\n1- Realizar encuesta de electricidad");// pendiente
+		System.out.println("\n1- Realizar encuesta de electricidad");
 		System.out.println("2- Realizar encuesta de agua");// pendiente
 		System.out.println("3- Realizar encuesta de desechos");// pendiente
 		System.out.println("4- Realizar encuesta de transporte");// pendiente
@@ -153,8 +153,7 @@ class Vista{
 		}		
 		return logeado;		
 	}
-	
-		
+			
 	//creamos cada uno de los usuarios y lo mandamos a listas para guardarlo en el txt
 	public void crear(){
 		
