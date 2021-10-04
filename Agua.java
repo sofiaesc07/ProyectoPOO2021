@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Casa_agua {
+public class Agua {
     //Atributos
     double numero1;
     double multiplicacion;
