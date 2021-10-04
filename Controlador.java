@@ -33,7 +33,11 @@ class Controlador{
 							e.leerNumeros();
 							e.Resultado();
 
-						}else if(subOpcion == 2){//pendiente
+						}else if(subOpcion == 2){
+							Agua a = new Agua();
+							a.leerNumeros();
+							a.Resultado();
+							
 						}else if(subOpcion == 3){//pendiente
 						}else if(subOpcion == 4){//pendiente
 						}else if(subOpcion == 5){//pendiente
