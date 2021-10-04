@@ -62,8 +62,8 @@ class Vista{
 		int opcion = 0;
 		System.out.println("\n¿Que deseas hacer?");
 		System.out.println("\n1- Realizar encuesta de electricidad");
-		System.out.println("2- Realizar encuesta de agua");// pendiente
-		System.out.println("3- Realizar encuesta de desechos");// pendiente
+		System.out.println("2- Realizar encuesta de agua");
+		System.out.println("3- Realizar encuesta de alimentacion");
 		System.out.println("4- Realizar encuesta de transporte");// pendiente
 		System.out.println("5- Revisar estadisticas y consejos");// pendiente
 		System.out.println("6- Salir" + "\n");

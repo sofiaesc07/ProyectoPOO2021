@@ -1,5 +1,5 @@
 /**************************************************************
-Controlador.java
+Electrcidad.java
 
 Autores: 
 Erick Bolaños - 20227

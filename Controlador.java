@@ -38,7 +38,12 @@ class Controlador{
 							a.leerNumeros();
 							a.Resultado();
 							
-						}else if(subOpcion == 3){//pendiente
+						}else if(subOpcion == 3){
+							Comidas c = new Comidas();
+							c.leerNumeros();
+							c.Resultado();
+						
+						
 						}else if(subOpcion == 4){//pendiente
 						}else if(subOpcion == 5){//pendiente
 						}else if(v.salirPerfil()){

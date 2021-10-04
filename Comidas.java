@@ -1,3 +1,16 @@
+/**************************************************************
+Comidas.java
+
+Autores: 
+Erick Bolaños - 20227
+Ana Escobar - 20489
+Eric Noriega - 211146
+
+
+En esta clase se realizara la operacion que calculara para el 
+usuario la huella de carbono que genera. 
+***************************************************************/
+
 import java.util.Scanner;
 
 public class Comidas {
