@@ -270,4 +270,34 @@ class Vista{
 			scan.nextLine();
 		} return numero1;
 	}
+
+	public int tipoMovilizar(){
+		//Menu para que el usuario eliga como se mueve y pueda calcular su huella.
+		int opcion = 0;
+		System.out.println("\n1- Electrico");
+		System.out.println("2- Híbrido");
+		System.out.println("3- Diesel");
+		System.out.println("4- Gasolina");
+		System.out.println("5- Camino o utilizo bicileta/skatboard");
+
+		//Comprobamos que el numero ingresado por el usuario se encuentre dentro de 
+		//nuestro rango de opciones y que sea un int
+		boolean continuar = false;
+		while (!continuar){
+            try{
+				opcion = scan.nextInt();
+                scan.nextLine();
+				if(opcion > 0 && opcion < 6){
+                    continuar = true;
+                }else{
+                    System.out.println("La opcion seleccionada no se encuentra en el menu de opciones.");
+                    System.out.println("Seleccione una opcion entre 1 y 5");
+                }
+            }catch(java.util.InputMismatchException excepcion){
+                System.out.println("Error. Opción ingresada fuera de rango.");
+                System.out.println("Coloque de nuevo la opción: ");
+                scan.nextLine();
+			}
+		}return opcion;
+	}
 }

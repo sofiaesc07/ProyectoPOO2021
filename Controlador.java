@@ -38,27 +38,50 @@ class Controlador{
 						subOpcion = v.subMenu();
 						if(subOpcion == 1){
 							v.infor("Ingrese la cantidad de kWh que genera en su hogar, esto lo puede encontrar en su recibo de luz: ");
-							double numero1 = v.pedirNumero();
+							double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
 							temp = new Electricidad(numero1, 0.385);
-							temp.Resultado();
+							temp.Resultado();//imprime el resultado
 
 						}else if(subOpcion == 2){
 							v.infor("Ingrese la cantidad de agua (En m3) que consume en su hogar, esto lo puede encontrar en su recibo de agua: ");
-							double numero1 = v.pedirNumero();
+							double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
 							temp = new Agua(numero1, 0.788);
-							temp.Resultado();
+							temp.Resultado();//imprime el resultado
 							
 						}else if(subOpcion == 3){
 							v.infor("Ingrese la cantidad de comidas que toma al dia: ");
-							double numero1 = v.pedirNumero();
+							double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
 							temp = new Comidas(numero1, 1.69);
-							temp.Resultado();
+							temp.Resultado();//imprime el resultado
 							
-						}else if(subOpcion == 4){//pendiente de calculo
-							v.infor("Ingrese el tipo de vehiculo que maneja: ");
-							double numero1 = v.pedirNumero();
-							temp = new Transporte(numero1, 0);
-							temp.Resultado();
+						}else if(subOpcion == 4){
+							v.infor("Ingrese el tipo de transporte(por gasolina) con el que se moviliza: ");
+							int opcion = 0;
+							opcion = v.tipoMovilizar();//se lanza un menú para que el usuairo observe que tipo de opcion de carros hay
+							if (opcion == 1){
+								v.infor("¿Cuantos kilometros lo has recorrido?: ");
+								double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
+								temp = new Transporte(numero1, 0.7);
+								temp.Resultado();//se muestra el resultado
+							}else if (opcion == 2){
+								v.infor("¿Cuantos kilometros lo has recorrido?: ");
+								double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
+								temp = new Transporte(numero1, 0.9);
+								temp.Resultado();//se muestra el resultado						
+							}else if (opcion == 3){
+								v.infor("¿Cuantos kilometros lo has recorrido?: ");
+								double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
+								temp = new Transporte(numero1, 1.43);
+								temp.Resultado();//se muestra el resultado
+							}else if (opcion == 4){
+								v.infor("¿Cuantos kilometros lo has recorrido?: ");
+								double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
+								temp = new Transporte(numero1, 1.18);
+								temp.Resultado();//se muestra el resultado
+							}else if (opcion == 5){
+								temp = new Transporte(0, 0.0);
+								temp.Resultado();
+							}
 
 						}else if(subOpcion == 5){//pendiente de clase 
 

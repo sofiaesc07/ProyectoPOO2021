@@ -26,6 +26,6 @@ public class Transporte extends HuellaCarbono{
 
     //Metodo que da un mensaje sobre el resultado de la encuesta
     public void Resultado(){
-        System.out.println("La huella de carbono aproximada que generas diariamente al comer es de: " +multiplicacion+ " kg de CO2.");
+        System.out.println("La huella de carbono que has generado es de: " +multiplicacion+ " kg de CO2.");
     }
 }
