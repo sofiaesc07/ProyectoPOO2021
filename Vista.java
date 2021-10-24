@@ -90,7 +90,7 @@ class Vista{
 
 	}
 	
-//Usuarios y contraseñas del programa 
+	//Usuarios y contraseñas del programa 
 
 	//iniciar sesión con usuarios registrados en la base de datos
 	public boolean login(){
@@ -208,7 +208,7 @@ class Vista{
 		}		
 	}
 	
-//Imprimir los usuarios con sus contraseñas por si una persona no se acuerda de estos.
+	//Imprimir los usuarios con sus contraseñas por si una persona no se acuerda de estos.
 	public void mostrarUsuarios(){
 		//ArrayList para guardar los usuarios
 		ArrayList<usuario> usuariosRep = l.leerUsuarios();
@@ -232,8 +232,12 @@ class Vista{
 			}
 		}
 	}
-	
-//Salir del perfil y del programa
+    //Mostrar informacion pasada por un parametro String
+    public void infor(String info_mostrar){
+        System.out.println(info_mostrar);
+    }
+
+	//Salir del perfil y del programa
 	public boolean salirPerfil(){
 
 		boolean cerrar = true;
@@ -251,5 +255,19 @@ class Vista{
 		System.out.println("VUELVA PRONTO");
 		
 		return cerrar;
+	}
+
+	//Le pedira el numero al usuario para saber sus datos al momento de calcular el CO2.s
+	public double pedirNumero(){
+		double numero1 = 0;
+		try{
+			numero1 = scan.nextDouble();
+			scan.nextLine();
+	//Excepcion si el usuario ingresa un dato no numerico
+		}catch(java.util.InputMismatchException excepcion){
+			System.out.println("Error. La opcion seleccionada debe ser numerica.");
+			System.out.println("Coloque de nuevo la opción: ");			
+			scan.nextLine();
+		} return numero1;
 	}
 }

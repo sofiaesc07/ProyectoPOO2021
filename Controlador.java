@@ -23,6 +23,7 @@ class Controlador{
 
 	public void programa(){
 		//opciones del menú principal
+		HuellaCarbono temp = null;
 		int num = 0;
 		while(num != 4){
 			num = v.menu();
@@ -36,22 +37,31 @@ class Controlador{
 						
 						subOpcion = v.subMenu();
 						if(subOpcion == 1){
-							Electricidad e = new Electricidad();
-							e.leerNumeros();
-							e.Resultado();
+							v.infor("Ingrese la cantidad de kWh que genera en su hogar, esto lo puede encontrar en su recibo de luz: ");
+							double numero1 = v.pedirNumero();
+							temp = new Electricidad(numero1, 0.385);
+							temp.Resultado();
 
 						}else if(subOpcion == 2){
-							Agua a = new Agua();
-							a.leerNumeros();
-							a.Resultado();
+							v.infor("Ingrese la cantidad de agua (En m3) que consume en su hogar, esto lo puede encontrar en su recibo de agua: ");
+							double numero1 = v.pedirNumero();
+							temp = new Agua(numero1, 0.788);
+							temp.Resultado();
 							
 						}else if(subOpcion == 3){
-							Comidas c = new Comidas();
-							c.leerNumeros();
-							c.Resultado();
+							v.infor("Ingrese la cantidad de comidas que toma al dia: ");
+							double numero1 = v.pedirNumero();
+							temp = new Comidas(numero1, 1.69);
+							temp.Resultado();
 							
-						}else if(subOpcion == 4){//pendiente
-						}else if(subOpcion == 5){//pendiente
+						}else if(subOpcion == 4){//pendiente de calculo
+							v.infor("Ingrese el tipo de vehiculo que maneja: ");
+							double numero1 = v.pedirNumero();
+							temp = new Transporte(numero1, 0);
+							temp.Resultado();
+
+						}else if(subOpcion == 5){//pendiente de clase 
+
 						}else if(v.salirPerfil()){
 							subOpcion = 6;
 						}
