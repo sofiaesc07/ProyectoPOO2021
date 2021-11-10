@@ -6,8 +6,9 @@ Erick Bolaños - 20227
 Ana Escobar - 20489
 Eric Noriega - 211146
 
-Con esta clase podremos ingrsesar a los métodos de impresión de la clase.
-vista para poder mostrarle el menú al usuario que esté interactuando con el programa.
+Con esta clase podremos ingrsesar a los métodos de impresión de 
+la clase vista para poder mostrarle el menú al usuario que esté 
+interactuando con el programa.
 ***************************************************************/
 
 class Controlador{
@@ -94,7 +95,6 @@ class Controlador{
 				v.crear();
 			}else if(num ==3){
 				v.mostrarUsuarios(); 
-				
 			}else if(num == 4){
 				if(v.salirPrograma()){
 					break;
