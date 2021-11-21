@@ -1,7 +1,7 @@
 /**************************************************************
 Electrcidad.java
 
-Autores: 
+Autores:
 Ana Escobar - 20489
 
 En esta clase se realizara la operacion que calculara para el 
@@ -11,8 +11,8 @@ usuario la huella de carbono que genera. Clase Hija
 public class Electricidad extends HuellaCarbono{
 
     //Constructor de la clase
-    public Electricidad(double numero1, double numero2){
-        super (numero1, numero2);
+    public Electricidad(double numero1, double numero2, double mes, double año){
+        super (numero1, numero2, mes, año);
     }
 
     //Operación para calcular la huella de carbono de las cosas   
@@ -26,27 +26,28 @@ public class Electricidad extends HuellaCarbono{
         System.out.println("La huella de carbono aproximada que generas diariamente es de: " +multiplicacion+ " kg de CO2.");
     }
 
- /*       //Clase que suma todas las huellas de carbono y aproxima el valor de CO2 en un mes
-	public void EstadisticasMes(){
-		double mes = multiplicacion * 30;
+    //Clase que suma todas las huellas de carbono y aproxima el valor de CO2 en un mes
+	public double EstadisticasMes(){
         meses.add(mes);
-        double sum = 0;
-		for(int i = 0; i < meses.size(); i++)
-		{
-			sum += meses.get(i);
+        for(int i = 0; i < meses.size(); i++){
+			estas1 += meses.get(i);
 		}
-        System.out.println("La huella de carbono aproximada que generas en un mes es de: " +sum+ " kg de CO2.");
+        return mes;
 	}
 
     //Clase que suma todas las huellas de carbono y aproxima el valor de CO2 en un año
-	public void EstadisticasAño(){
-		double año = multiplicacion * 30;
+	public double EstadisticasAño(){
         años.add(año);
-        double sum = 0;
-		for(int i = 0; i < años.size(); i++)
-		{
-			sum += años.get(i);
+		for(int i = 0; i < años.size(); i++){ 
+            estas2 += años.get(i);
 		}
-        System.out.println("La huella de carbono aproximada que generas en un mes es de: " +sum+ " kg de CO2.");
-	}*/
+        return año; 
+	}
+
+    public void resumenEstas(){
+        System.out.println("La huella de carbono aproximada que generas en un mes es de: " +estas1+ " kg de CO2.");
+        System.out.println(" ");
+        System.out.println("La huella de carbono aproximada que generas en un años es de: " +estas2+ " kg de CO2.");
+        System.out.println(" ");
+    }
 }
