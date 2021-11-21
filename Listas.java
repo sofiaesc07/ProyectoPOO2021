@@ -2,9 +2,7 @@
 Listas.java
 
 Autores: 
-Erick Bolaños - 20227
 Ana Escobar - 20489
-Eric Noriega - 211146
 
 Con esta clase podremos leer y sobrescribir Arrays en archivos.
 ****************************************************************************/

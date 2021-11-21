@@ -2,9 +2,7 @@
 Principal.java 
 
 Autores: 
-Erick Bolaños - 20227
 Ana Escobar - 20489
-Eric Noriega - 211146
 
 Con esta clase se puede inicializar el programa e invoca a la clase vista 
 para que el usuario pueda interactuar con el perfil. 

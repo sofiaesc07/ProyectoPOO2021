@@ -2,9 +2,7 @@
 Controlador.java
 
 Autores: 
-Erick Bolaños - 20227
 Ana Escobar - 20489
-Eric Noriega - 211146
 
 Con esta clase podremos ingrsesar a los métodos de impresión de 
 la clase vista para poder mostrarle el menú al usuario que esté 
@@ -60,31 +58,39 @@ class Controlador{
 							int opcion = 0;
 							opcion = v.tipoMovilizar();//se lanza un menú para que el usuairo observe que tipo de opcion de carros hay
 							if (opcion == 1){
-								v.infor("¿Cuantos kilometros lo has recorrido?: ");
+								v.infor("¿Cuantos kilometros lo recorres diariamente?: ");
 								double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
 								temp = new Transporte(numero1, 0.7);
 								temp.Resultado();//se muestra el resultado
+
 							}else if (opcion == 2){
-								v.infor("¿Cuantos kilometros lo has recorrido?: ");
+								v.infor("¿Cuantos kilometros lo recorres diariamente?: ");
 								double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
 								temp = new Transporte(numero1, 0.9);
-								temp.Resultado();//se muestra el resultado						
+								temp.Resultado();//se muestra el resultado	
+								
 							}else if (opcion == 3){
-								v.infor("¿Cuantos kilometros lo has recorrido?: ");
+								v.infor("¿Cuantos kilometros lo recorres diariamente?: ");
 								double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
 								temp = new Transporte(numero1, 1.43);
 								temp.Resultado();//se muestra el resultado
+
 							}else if (opcion == 4){
-								v.infor("¿Cuantos kilometros lo has recorrido?: ");
+								v.infor("¿Cuantos kilometros lo recorres diariamente?: ");
 								double numero1 = v.pedirNumero();//se pide el valor que se necesita para hacer el calculo de la huella de carbono
 								temp = new Transporte(numero1, 1.18);
 								temp.Resultado();//se muestra el resultado
+
 							}else if (opcion == 5){
 								temp = new Transporte(0, 0.0);
 								temp.Resultado();
+
 							}
 
 						}else if(subOpcion == 5){//pendiente de clase 
+							
+							temp.EstadisticasMes();
+							temp.EstadisticasAño();
 
 						}else if(v.salirPerfil()){
 							subOpcion = 6;

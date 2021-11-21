@@ -2,9 +2,7 @@
 Usuario.java
 
 Autores: 
-Erick Bolaños - 20227
 Ana Escobar - 20489
-Eric Noriega - 211146
 
 Con esta clase se implemento la clase Serializable para poder guardar los 
 objetos creados en un documento.
