@@ -9,9 +9,7 @@ para simplificar el codigo. Las clases hijas heredaran las caracteristicas
 que comparten.
 ****************************************************************************/
 
-//importamos todas la libreria util de java
-import java.util.*;
-
+//Constructor de la huella de carbono
 public abstract class HuellaCarbono {
     
     //Atributos protected para que sean accesibles unicamente a las clases descendientes de esta

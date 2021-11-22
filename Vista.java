@@ -66,7 +66,7 @@ class Vista {
 		System.out.println("2- Realizar encuesta de agua");
 		System.out.println("3- Realizar encuesta de alimentacion");
 		System.out.println("4- Realizar encuesta de transporte");
-		System.out.println("5- Revisar totales");
+		System.out.println("5- Revisar totales y recomendaciones");
 		System.out.println("6- Salir" + "\n");
 
 		// Comprobamos que el numero ingresado por el usuario se encuentre dentro de
@@ -89,7 +89,6 @@ class Vista {
 			}
 		}
 		return opcion;
-
 	}
 
 	// Usuarios y contraseñas del programa
@@ -316,7 +315,7 @@ class Vista {
 	//Menu que agrega recomendaciones al usuario para cuando se pida el total de huella.
 	public void lista(){
 		System.out.println("\nRecomendaciones para disminuir tu huella de carbono");
-		System.out.println("\n1- Movilizarse en bicicleta o a pies");
+		System.out.println("\n1- Movilizarse en bicicleta o a pie.");
 		System.out.println("2- Comer más alimentos vegetales y menos alimentos animales.");
 		System.out.println("3- Apagar las luces de tu casa cuando no se necesiten.");
 		System.out.println("4- Mantener los aparatos desconectados cuando no esten siendo utilizados.");
