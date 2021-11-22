@@ -65,8 +65,8 @@ class Vista {
 		System.out.println("\n1- Realizar encuesta de electricidad");
 		System.out.println("2- Realizar encuesta de agua");
 		System.out.println("3- Realizar encuesta de alimentacion");
-		System.out.println("4- Realizar encuesta de transporte");// pendiente
-		System.out.println("5- Revisar estadisticas y consejos");// pendiente
+		System.out.println("4- Realizar encuesta de transporte");
+		System.out.println("5- Revisar totales");
 		System.out.println("6- Salir" + "\n");
 
 		// Comprobamos que el numero ingresado por el usuario se encuentre dentro de
@@ -282,6 +282,7 @@ class Vista {
 	}
 
 	public int tipoMovilizar() {
+
 		// Menu para que el usuario eliga como se mueve y pueda calcular su huella.
 		int opcion = 0;
 		System.out.println("\n1- Electrico");
@@ -310,5 +311,17 @@ class Vista {
 			}
 		}
 		return opcion;
+	}
+
+	//Menu que agrega recomendaciones al usuario para cuando se pida el total de huella.
+	public void lista(){
+		System.out.println("\nRecomendaciones para disminuir tu huella de carbono");
+		System.out.println("\n1- Movilizarse en bicicleta o a pies");
+		System.out.println("2- Comer más alimentos vegetales y menos alimentos animales.");
+		System.out.println("3- Apagar las luces de tu casa cuando no se necesiten.");
+		System.out.println("4- Mantener los aparatos desconectados cuando no esten siendo utilizados.");
+		System.out.println("5- Compra y consume de manera responsable.");
+		System.out.println("6- Disminuye tu tiempo en la ducha.");
+		System.out.println("6- No dejes el agua prendida si no la estas utilizando.");
 	}
 }
